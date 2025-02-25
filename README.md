@@ -175,7 +175,7 @@
   ```
 
 ### Example Output:
-![alt text](https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/ENST00000380152_exons_Short_Introns.png)
+![alt text](https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/ENST00000278224_exons_Short_Introns.png)
 
 ## Script Flags:
 
