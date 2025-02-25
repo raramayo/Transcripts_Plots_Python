@@ -295,6 +295,14 @@
     Codename:                        Sequoia
 	--------------------------------------------------------------------------------
 
-## Repository:                       https://github.com/raramayo/Transcripts_Plots_Python
+## Repository:
 
-## Issues:                           https://github.com/raramayo/Transcripts_Plots_Python/issues
+	--------------------------------------------------------------------------------
+    https://github.com/raramayo/Transcripts_Plots_Python
+	--------------------------------------------------------------------------------
+	
+## Issues:
+
+	--------------------------------------------------------------------------------
+    https://github.com/raramayo/Transcripts_Plots_Python/issues
+	--------------------------------------------------------------------------------
