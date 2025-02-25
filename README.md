@@ -289,8 +289,12 @@
 ## Development/Testing Environment:
 
 	--------------------------------------------------------------------------------
-    Distributor ID:       Apple, Inc.
-    Description:          Apple M1 Max
-    Release:              15.3.1
-    Codename:             Sequoia
+    Distributor ID:                  Apple, Inc.
+    Description:                     Apple M1 Max
+    Release:                         15.3.1
+    Codename:                        Sequoia
 	--------------------------------------------------------------------------------
+
+## Repository:                       https://github.com/raramayo/Transcripts_Plots_Python
+
+## Issues:                           https://github.com/raramayo/Transcripts_Plots_Python/issues
