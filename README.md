@@ -1,4 +1,5 @@
 # Transcripts_Plots
+![alt text](https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_Logo.png)
 
 ## Overview:
 
@@ -49,13 +50,13 @@
     along with this program. If not, see <https://www.gnu.org/licenses/>.
     --------------------------------------------------------------------------------
 
-## Script_Version:
+## Script Version:
 
 	--------------------------------------------------------------------------------
 	v1.0.0
 	--------------------------------------------------------------------------------
 
-## Script_Usage:
+## Script Usage:
 ### Key Capabilities
 + ### Input Flexibility:
   + Single Transcript:
@@ -96,8 +97,8 @@
 
 + ### Dependency Checking:
   + At startup, the script checks for required modules (like ```matplotlib```) and provides instructions to install any that are missing.
-## How to Use the Script
-### Single Transcript Mode
+## How to Use the Script:
+### Single Transcript Mode:
 + Run the script by providing a transcript ID and a GTF file:
 
 	```
@@ -140,7 +141,7 @@
 	```
 	ENST00000380152_CDS_Full_Introns.pdf
 	```
-+ Multiple Transcripts Mode
+### Multiple Transcripts Mode:
   + Create a tab-delimited file (e.g., ```Ensembl_multiple_genes_transcripts_list.txt```) where each line contains a transcript ID and the corresponding GTF file:
 
 	```
@@ -172,7 +173,10 @@
   python3 Transcripts_Plots.py --version
   ```
 
-## Script_Flags:
+### Example Output:
+![alt text](https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/ENST00000380152_exons_Short_Introns.png)
+
+## Script Flags:
 
 	--------------------------------------------------------------------------------
 	FLAG:                            "-t", "--transcript"
