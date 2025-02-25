@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14926216.svg)](https://doi.org/10.5281/zenodo.14926216)
 # Transcripts_Plots
 ![alt text](https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_Logo.png)
 
