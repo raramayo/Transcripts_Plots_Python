@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14926216.svg)](https://doi.org/10.5281/zenodo.14926216)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14926215.svg)](https://doi.org/10.5281/zenodo.14926215)
 # Transcripts_Plots
 ![alt text](https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_Logo.png)
 
@@ -47,17 +47,17 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
     General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
+	You should have received a copy of the GNU General Public License
     along with this program. If not, see <https://www.gnu.org/licenses/>.
     --------------------------------------------------------------------------------
 
-## Script Version:
+## Script_Version:
 
 	--------------------------------------------------------------------------------
-	v1.0.0
+	v1.0.1
 	--------------------------------------------------------------------------------
 
-## Script Usage:
+## Script_Usage:
 ### Key Capabilities
 + ### Input Flexibility:
   + Single Transcript:
@@ -84,8 +84,11 @@
   + Set the output file format ```(pdf, png, or svg)``` and resolution ```(--dpi)```.
 
 + ### Labeling Options:
-  + You can choose not to label features ```(--labels none)``` or label the first and last feature only ```(--labels full)```.
-  + Transcript labels (including gene name, transcript ID, transcript size, and number of features) are automatically placed above the gene model.
+  + Print Transcript Label (Default Behavior):
+	+ Transcript labels (including gene name, transcript ID, transcript size, and number of features) are automatically placed above the gene model.
+  + Disable Transcript Label:
+	+ You can disable the transcript label by using the ```--no_transcript_label``` flag.
+   + You can choose not to label features ```(--labels none)``` or label the first and last feature only ```(--labels full)```.
 + ### Output Naming:
   + The produced file names incorporate whether introns are displayed in full scale or compressed, for example:
 
@@ -175,9 +178,21 @@
   ```
 
 ### Example Output:
++ ### Command:
+
+	```
+	python3 Transcripts_Plots.py \
+	--transcript ENST00000278224 \
+	--gtf Ensembl_Gene_ENSG00000110619.gtf \
+	--labels full \
+	--select exons \
+	--format png
+	```
+
++ ### Output:
 ![alt text](https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/ENST00000278224_exons_Short_Introns.png)
 
-## Script Flags:
+## Script_Flags:
 
 	--------------------------------------------------------------------------------
 	FLAG:                            "-t", "--transcript"
@@ -232,10 +247,20 @@
     FORMAT:                          "Alphanumeric String = "--full_scale""
     CHOICES:                         "Omitting the flag:  == "False""
                                      "Providing the flag: == "True""
+	ACTION:                          "store_true"
     DEFAULT:                         "False"
     HELP:                            "Plot entire region to scale; otherwise introns are compressed uniformly"
 	--------------------------------------------------------------------------------
-    FLAG:                            "--labels"
+	FLAG:                            "--no_transcript_label"
+	REQUIRED:                        "No"
+	FORMAT:                          "Alphanumeric String = "--print_transcript_label""
+	                                 "Omitting the flag:  == "True""
+	                                 "Providing the flag: == "False""
+	ACTION:                          "store_false"
+	DEFAULT:                         "True"
+	HELP:                            "Do not print the transcript label above the plot"
+	--------------------------------------------------------------------------------
+	FLAG:                            "--labels"
     REQUIRED:                        "No"
     FORMAT:                          "Alphanumeric String"
     CHOICES:                         "none", "full"
@@ -255,6 +280,14 @@
     DEFAULT:                         "300"
     HELP:                            "Resolution (dpi) for output file (for png)"
 	--------------------------------------------------------------------------------
+	FLAG:                            "--dynamic_resize"
+    REQUIRED:                        "No"
+    ACTION:                          "store_true"
+    CHOICES:                         "Omitting the flag:  == "False""
+                                     "Providing the flag: == "True""
+    DEFAULT:                         "False"
+    HELP:                            "Dynamically adjust figure size to match drawn content (eliminates extra whitespace)"
+	--------------------------------------------------------------------------------
     FLAG:                            "--figsize"
     REQUIRED:                        "No"
     Number_OF_ARGUMENTS:             "2"
@@ -273,10 +306,10 @@
     FORMAT:                          "Alphanumeric"
     DEFAULT:                         "Transcripts_Plots_dir_Run01"
     HELP:                            "Output directory name. If provided and exists, a numeric suffix is added (e.g., Test01)"
-
+	--------------------------------------------------------------------------------
     FLAG:                            "-v", "--version"
     REQUIRED:                        "No"
-    ACTION:                          "Version"
+    ACTION:                          "version"
     FORMAT:                          "Alphanumeric"
     HELP:                            "Show program version's number and exit"
 	--------------------------------------------------------------------------------
@@ -301,7 +334,7 @@
 	--------------------------------------------------------------------------------
     https://github.com/raramayo/Transcripts_Plots_Python
 	--------------------------------------------------------------------------------
-	
+
 ## Issues:
 
 	--------------------------------------------------------------------------------

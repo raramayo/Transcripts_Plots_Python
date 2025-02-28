@@ -29,7 +29,7 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <https://www.gnu.org/licenses/>.
 --------------------------------------------------------------------------------
 Version Number:
-Version: 1.0.0
+Version: 1.0.1
 --------------------------------------------------------------------------------
 """
 #-------------------------------------------------------------------------------
@@ -40,10 +40,10 @@ import sys
 script_name = os.path.basename(sys.argv[0])
 
 # Defining Script Current Version
-script_version = "1.0.0"
+script_version = "1.0.1"
 
 # Defining_Script_Current_Version (date '+DATE:%Y/%m/%d%tTIME:%R')
-current_version_date = "DATE:2025/02/21"
+current_version_date = "DATE:2025/02/28"
 #-------------------------------------------------------------------------------
 # Dependency checking
 required_modules = {
@@ -199,22 +199,18 @@ def create_output_dir(base_name=None):
 def plot_transcript(features, args, transcript_id, gene_name, plot_feature="exons"):
     """
     Plot the transcript structure for the given features (either exons or CDS),
-    always left-to-right from 5' to 3'.
+    always left-to-right from 5' to 3'. At the end, if dynamic_resize is enabled,
+    the figure width is adjusted based on the data range so that extra whitespace is minimized.
     """
-
-    # 1) Determine the strand
+    # 1) Determine strand and scale coordinates
     #    Because we reversed minus-strand features in process_features,
-    #    features[0] is always the 5' end, even for minus strand.
+    #    features[0] is always the 5' end.
     strand = features[0]['strand'] if features else '+'
-
-    # 2) Scale the coordinates
     scaled_features = []
     if args.full_scale:
         # FULL-SCALE MODE:
         # We want to place features[0] at x=0, then map everything accordingly.
         first_start = features[0]['start']
-        first_end   = features[0]['end']
-
         for f in features:
             # For plus strand, do: scaled_start = f['start'] - first_start
             # For minus strand, do: scaled_start = first_start - f['end']
@@ -226,35 +222,30 @@ def plot_transcript(features, args, transcript_id, gene_name, plot_feature="exon
                 # minus-strand features are reversed, so features[0] is the highest coordinate
                 s_start = first_start - f['end']
                 s_end   = first_start - f['start']
-
             new_f = f.copy()
             new_f['scaled_start'] = s_start
             new_f['scaled_end']   = s_end
             scaled_features.append(new_f)
-
     else:
         # INTRON-COMPRESSED MODE:
         # We'll do a simple linear chaining from left to right.
         current_pos = 0
-        prev_end = None
         for i, f in enumerate(features):
             new_f = f.copy()
             width = f['end'] - f['start']
             if i == 0:
-                # first feature at x=0
                 s_start = 0
                 s_end   = width
                 current_pos = s_end
             else:
-                s_start = current_pos + 20  # 20 is the fixed intron gap
+                s_start = current_pos + 20  # 20 is the fixed intron gap.
                 s_end   = s_start + width
                 current_pos = s_end
-
             new_f['scaled_start'] = s_start
             new_f['scaled_end']   = s_end
             scaled_features.append(new_f)
 
-    # 3) Compute transcript size, build label text
+    # 2) Compute transcript size and prepare transcript label text.
     transcript_size = (max(f['end'] for f in features) - min(f['start'] for f in features)) / 1000.0
     num_features = len(features)
     if plot_feature.lower() == "exons":
@@ -262,34 +253,38 @@ def plot_transcript(features, args, transcript_id, gene_name, plot_feature="exon
     else:
         info_text = f"{gene_name} ({transcript_id} [{transcript_size:.1f} kbp - {num_features}-CDS])"
 
-    # 4) Set uniform rectangle parameters
+    # 3) Set uniform rectangle parameters (for both exons and CDS)
     rect_y = 0.5
     #### rect_y = 0.75
     rect_height = 0.3
     #### rect_height = 0.5
 
-    # 5) Create figure and axes
+    # 4) Create figure and axis using the provided figsize
     fig, ax = plt.subplots(figsize=args.figsize)
-    plt.subplots_adjust(left=0.08, right=0.98, top=0.90, bottom=0.12)
+    #### plt.subplots_adjust(left=0.08, right=0.98, top=0.90, bottom=0.12)
+    plt.subplots_adjust(left=0.08, right=0.98, top=0.60, bottom=0.12)
 
-    # 6) Place transcript label above the first feature
-    first_feat = scaled_features[0]
-    trans_label_x = first_feat['scaled_start']
-    trans_label_y = rect_y + rect_height + 0.15
-    #### ax.text(trans_label_x, trans_label_y, info_text, ha="left", va="bottom", fontsize=10, weight="bold")
-    #### ax.text(trans_label_x, trans_label_y, info_text, ha="left", va="bottom", fontsize=18, weight="bold")
-    ax.text(trans_label_x, trans_label_y, info_text, ha="left", va="bottom", fontsize=args.transcript_fontsize, weight="bold")
+    # 5) Conditionally place the transcript label (if not suppressed)
+    if args.print_transcript_label:
+        first_feat = scaled_features[0]
+        trans_label_x = first_feat['scaled_start']
+        #### trans_label_y = rect_y + rect_height + 0.15
+        trans_label_y = rect_y + rect_height + 0.40
+        #### ax.text(trans_label_x, trans_label_y, info_text, ha="left", va="bottom", fontsize=10, weight="bold")
+        #### ax.text(trans_label_x, trans_label_y, info_text, ha="left", va="bottom", fontsize=18, weight="bold")
+        #### ax.text(trans_label_x, trans_label_y, info_text, ha="left", va="bottom", fontsize=args.transcript_fontsize, weight="bold")
+        #### ax.text(trans_label_x, trans_label_y, info_text, ha="left", va="bottom", fontsize=args.transcript_fontsize if hasattr(args, 'transcript_fontsize') else 18, weight="bold")
+        ax.text(trans_label_x, trans_label_y, info_text, ha="left", va="bottom", fontsize=args.transcript_fontsize, weight="bold")
 
-    # 7) Choose color
+    # 6) Choose color based on feature type.
     color = args.exon_color if plot_feature.lower() == "exons" else args.CDS_color
 
-    # 8) Draw each feature as a rectangle
+    # 7) Draw each feature as a rectangle and label only first and last features if requested.
     for i, feat in enumerate(scaled_features):
         x = feat['scaled_start']
         width = feat['scaled_end'] - feat['scaled_start']
         ax.add_patch(plt.Rectangle((x, rect_y), width, rect_height, color=color, ec='black'))
-
-        # Label only the first and last if --labels=full
+        # Label only the first and last feature if --labels is set to "full".
         if args.labels == "full" and (i == 0 or i == len(scaled_features) - 1):
             if plot_feature.lower() == "exons":
                 label = "E01" if i == 0 else f"E{num_features:02d}"
@@ -298,31 +293,38 @@ def plot_transcript(features, args, transcript_id, gene_name, plot_feature="exon
             #### ax.text(x + width/2, rect_y + rect_height + 0.05, label, ha='center', va='bottom', fontsize=8, color="black")
             ax.text(x + width/2, rect_y + rect_height + 0.05, label, ha='center', va='bottom', fontsize=10, color="black")
 
-    # 9) Draw dashed lines between consecutive features
+    # 8) Draw dashed lines (intron lines) between consecutive features.
     for i in range(1, len(scaled_features)):
         x0 = scaled_features[i-1]['scaled_end']
         x1 = scaled_features[i]['scaled_start']
-        y_line = rect_y + rect_height / 2
+        y_line = rect_y + rect_height/2
         # You can make the dashes smaller by using a custom dash pattern:
         # linestyle=(0, (1, 1)) or something similar.
         #### ax.plot([x0, x1], [y_line, y_line], linestyle='dashed', color='gray')
+        # Custom dash pattern: (offset, (dash_length, gap_length))
+        # Custom dash pattern for shorter dashes.
         ax.plot([x0, x1], [y_line, y_line], linestyle=(0, (1, 1)), color='gray')
 
-    # 10) Determine x_min and x_max
+    # 9) Set x-axis limits based on the data range (with a small padding).
     x_min = min(f['scaled_start'] for f in scaled_features)
-    x_max = max(f['scaled_end']   for f in scaled_features)
-
-    # 11) If full_scale, optionally do dynamic figure width
-    if args.full_scale:
-        genomic_span = x_max - x_min
-        dynamic_width = max(args.figsize[0], genomic_span / 1000.0)
-        fig.set_size_inches(dynamic_width, args.figsize[1])
-
-    # 12) Set x/y limits
+    x_max = max(f['scaled_end'] for f in scaled_features)
     ax.set_xlim(x_min - 10, x_max + 10)
     ax.set_ylim(0, 2)
-    ax.axis('off')
 
+    # 10) Dynamic resizing: adjust the figure width based on the x-range of the drawn content.
+    if args.dynamic_resize:
+        # Calculate the data width (we already have x_min and x_max)
+        data_width = (x_max - x_min) + 20  # Add padding equivalent to the axis limits.
+        # Define a conversion factor: in full_scale mode we assume 1000 data units per inch;
+        # in compressed mode we assume a 1:1 ratio.
+        conversion = 1000.0 if args.full_scale else 1.0
+        new_width_inches = data_width / conversion
+        # Ensure the new width is at least the original width and cap it to a maximum (e.g., 20 inches)
+        new_width_inches = max(new_width_inches, args.figsize[0])
+        new_width_inches = min(new_width_inches, 20)
+        fig.set_size_inches(new_width_inches, args.figsize[1])
+
+    ax.axis('off')
     return fig
 
 #-------------------------------------------------------------------------------
@@ -378,6 +380,13 @@ def main():
       help="Plot entire region to scale; otherwise introns are compressed uniformly"
     )
     parser.add_argument(
+      "--no_transcript_label",
+      dest="print_transcript_label",
+      action="store_false",
+      default=True,
+      help="Do not print the transcript label above the plot"
+    )
+    parser.add_argument(
       "--labels",
       type=str,
       choices=["none", "full"],
@@ -396,6 +405,12 @@ def main():
       type=int,
       default=300,
       help="Resolution (dpi) for output file (for png)"
+    )
+    parser.add_argument(
+      "--dynamic_resize",
+      action="store_true",
+      default=False,
+      help="Dynamically adjust figure size to match drawn content (eliminates extra whitespace)"
     )
     parser.add_argument(
       "--figsize",
@@ -425,6 +440,9 @@ def main():
     )
     args = parser.parse_args()
 
+    if args.dpi > 2000:
+      print("Warning: High DPI values may result in extremely large images.")
+
     # For multi-transcript mode, verify that the file exists before creating any output directory.
     if args.file and not os.path.exists(args.file):
         sys.exit(f"Error: The file '{args.file}' does not exist.")
@@ -452,12 +470,16 @@ def main():
         if args.select in ("exons", "both"):
             fig = plot_transcript(exons, args, transcript_id, gene_name, plot_feature="exons")
             out_path = os.path.join(out_dir, f"{transcript_id}_exons_{introns_status}.{args.format}")
-            fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight')
+            #### fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight')
+            #### fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight', pad_inches=0.1)
+            fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight', pad_inches=0.05)
             plt.close(fig)
         if args.select in ("CDS", "both") and cds:
             fig = plot_transcript(cds, args, transcript_id, gene_name, plot_feature="CDS")
             out_path = os.path.join(out_dir, f"{transcript_id}_CDS_{introns_status}.{args.format}")
-            fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight')
+            #### fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight')
+            #### fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight', pad_inches=0.1)
+            fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight', pad_inches=0.05)
             plt.close(fig)
 
     # Multiple transcripts mode:
@@ -489,13 +511,17 @@ def main():
                 if args.select in ("exons", "both"):
                     fig = plot_transcript(exons, args, transcript_id, gene_name, plot_feature="exons")
                     out_path = os.path.join(out_dir, f"{transcript_id}_exons_{introns_status}.{args.format}")
-                    fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight')
+                    #### fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight')
+                    #### fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight', pad_inches=0.1)
+                    fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight', pad_inches=0.05)
                     plt.close(fig)
                     output_files_created += 1
                 if args.select in ("CDS", "both") and cds:
                     fig = plot_transcript(cds, args, transcript_id, gene_name, plot_feature="CDS")
                     out_path = os.path.join(out_dir, f"{transcript_id}_CDS_{introns_status}.{args.format}")
-                    fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight')
+                    #### fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight')
+                    #### fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight', pad_inches=0.1)
+                    fig.savefig(out_path, format=args.format, dpi=args.dpi, bbox_inches='tight', pad_inches=0.05)
                     plt.close(fig)
                     output_files_created += 1
 
