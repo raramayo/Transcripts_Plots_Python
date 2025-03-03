@@ -29,21 +29,12 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <https://www.gnu.org/licenses/>.
 --------------------------------------------------------------------------------
 Version Number:
-Version: 1.0.1
+Version: 1.0.2
 --------------------------------------------------------------------------------
 """
 #-------------------------------------------------------------------------------
 import os
 import sys
-#-------------------------------------------------------------------------------
-# Defining Script Name
-script_name = os.path.basename(sys.argv[0])
-
-# Defining Script Current Version
-script_version = "1.0.1"
-
-# Defining_Script_Current_Version (date '+DATE:%Y/%m/%d%tTIME:%R')
-current_version_date = "DATE:2025/02/28"
 #-------------------------------------------------------------------------------
 # Dependency checking
 required_modules = {
@@ -63,6 +54,16 @@ import argparse
 import matplotlib.pyplot as plt
 from textwrap import dedent
 from packaging import version
+#-------------------------------------------------------------------------------
+# Defining Script Name
+script_name = os.path.basename(sys.argv[0])
+
+# Defining Script Current Version
+script_version = "1.0.2"
+
+# Defining_Script_Current_Version (date '+DATE:%Y/%m/%d%tTIME:%R')
+current_version_date = "DATE:2025/03/03"
+#-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
 # Helper Functions
@@ -332,8 +333,10 @@ def plot_transcript(features, args, transcript_id, gene_name, plot_feature="exon
 #-------------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate transcript plots from GTF files.")
-
+    parser = argparse.ArgumentParser(
+      description="Generate transcript plots from GTF files.",
+    formatter_class=argparse.RawTextHelpFormatter
+    )
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument(
       "-t",
@@ -435,7 +438,7 @@ def main():
       "-v",
       "--version",
       action="version",
-      version="Transcripts_Plots.py Version: v1.0.0",
+      version=f"Transcripts_Plots.py Version: {script_version}",
       help="Show program version and exit"
     )
     args = parser.parse_args()
