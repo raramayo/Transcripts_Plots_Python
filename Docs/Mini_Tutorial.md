@@ -252,8 +252,8 @@ ENST00000380152    ==> Protein coding
 For `CARS1`
 
 ```
-ENST00000531387	==> Nonsense mediated decay
-ENST00000380525	==> Protein coding
+ENST00000531387    ==> Nonsense mediated decay
+ENST00000380525    ==> Protein coding
 ```
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380525_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
