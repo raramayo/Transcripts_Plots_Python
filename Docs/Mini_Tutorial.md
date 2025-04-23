@@ -281,30 +281,30 @@
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run05/ENST00000380152_exons_Full_Introns.png" style="display: block; margin:0 auto">
 
-	The color of the exons displayed is "#305c96"
+	The color of the exons displayed is Blue (#305c96)
 
-    We can modify this behavior by issuing the following command:
-
-    ```
+	We can modify this behavior by issuing the following command:
+	
 	python3 Transcripts_Plots.py \
 	--format png \
 	--dynamic_resize \
-    --transcript ENST00000380152 \
-    --gtf Ensembl_Gene_ENSG00000139618.gtf \
-    --select exons \
-    --full_scale \
+	--transcript ENST00000380152 \
+	--gtf Ensembl_Gene_ENSG00000139618.gtf \
+	--select exons \
+	--full_scale \
 	--exon_color '#ed0920'
-	```
+
 
 	This will generate a directory entitled:
 
-    ```
+	```
 	Transcripts_Plots_dir_Run06
-    ```
+	```
 
-    Containing a plot for the `ENST00000380152` transcript where the exons are depictred using the `#ed0920` color.
+	Containing a plot for the `ENST00000380152` transcript where the exons are depictred using the Red (#ed0920) color.
 
-<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run06/ENST00000380152_exons_Full_Introns.png" style="display: block;margin: 0 auto">
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run06/ENST00000380152_exons_Full_Introns.png" style="display: block; margin:0 auto">
+
 	Similar effects can be achieved by using the `--select CDS` flag.
 
 + Adjusting Figure Size:
