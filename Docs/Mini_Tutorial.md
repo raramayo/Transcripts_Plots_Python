@@ -83,7 +83,7 @@
 	```
 	python3 Transcripts_Plots.py \
 	--format png \
-	--no_transcript_label \
+	--dynamic_resize  \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select exons
@@ -114,7 +114,7 @@
 	```
 	python3 Transcripts_Plots.py \
 	--format png \
-	--no_transcript_label \
+	--dynamic_resize  \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select CDS \
@@ -146,7 +146,7 @@
 	```
 	python3 Transcripts_Plots.py \
 	--format png \
-	--no_transcript_label \
+	--dynamic_resize  \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select CDS \
@@ -228,7 +228,7 @@
 	```
 	python3 Transcripts_Plots.py \
 	--format png \
-	--no_transcript_label \
+	--dynamic_resize  \
 	--file Ensembl_multiple_genes_transcripts_list.txt \
 	--select CDS \
 	--full_scale
@@ -288,7 +288,7 @@
     ```
 	python3 Transcripts_Plots.py \
 	--format png \
-	--no_transcript_label \
+	--dynamic_resize  \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select exons \
@@ -315,7 +315,7 @@
     ```
 	python3 Transcripts_Plots.py \
 	--format png \
-	--no_transcript_label \
+	--dynamic_resize  \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select exons \
@@ -345,7 +345,7 @@
 	```
 	python3 Transcripts_Plots.py \
 	--format png \
-	--no_transcript_label \
+	--dynamic_resize  \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
     --select exons \
