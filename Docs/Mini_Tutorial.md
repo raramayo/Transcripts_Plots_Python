@@ -285,24 +285,23 @@
 The color of the exons displayed is Blue (`#305c96`)
 		
 We can modify this behavior by issuing the following command:
-	
 
-	```
-	python3 Transcripts_Plots.py \
-	--format png \
-	--dynamic_resize \
-	--transcript ENST00000380152 \
-	--gtf Ensembl_Gene_ENSG00000139618.gtf \
-	--select exons \
-	--full_scale \
-	--exon_color '#ed0920'
-	```
+```
+python3 Transcripts_Plots.py \
+--format png \
+--dynamic_resize \
+--transcript ENST00000380152 \
+--gtf Ensembl_Gene_ENSG00000139618.gtf \
+--select exons \
+--full_scale \
+--exon_color '#ed0920'
+```
 
-	This will generate a directory entitled:
+This will generate a directory entitled:
 
-	```
-	Transcripts_Plots_dir_Run06
-	```
+```
+Transcripts_Plots_dir_Run06
+```
 
 Containing a plot for the `ENST00000380152` transcript where the exons are depictred using the Red (`#ed0920`) color
 
