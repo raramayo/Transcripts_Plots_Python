@@ -104,7 +104,7 @@
 	The plot produced corresponds to the `BRCA2` transcript `ENST00000380152`.
 	This transcript is 84.8 kbp long and is composed of 27-exons, with the following structure:
 
-<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run01/ENST00000380152_exons_Short_Introns.png" width="2000" height="500" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run01/ENST00000380152_exons_Short_Introns.png" style="display: block; margin: 0 auto">
 
 + To generate a `CDS` plot at full scale:
 
