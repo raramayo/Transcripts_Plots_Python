@@ -29,7 +29,7 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <https://www.gnu.org/licenses/>.
 --------------------------------------------------------------------------------
 Version Number:
-Version: 1.0.2
+Version: 1.0.3
 --------------------------------------------------------------------------------
 """
 #-------------------------------------------------------------------------------
@@ -40,7 +40,6 @@ import sys
 required_modules = {
     "pip": "python3 -m pip install -U pip",
     "matplotlib": "python3 -m pip install -U matplotlib",
-    # If you had other non-standard dependencies, add them here.
 }
 
 for module, install_cmd in required_modules.items():
@@ -59,10 +58,10 @@ from packaging import version
 script_name = os.path.basename(sys.argv[0])
 
 # Defining Script Current Version
-script_version = "1.0.2"
+script_version = "1.0.3"
 
 # Defining_Script_Current_Version (date '+DATE:%Y/%m/%d%tTIME:%R')
-current_version_date = "DATE:2025/03/03"
+current_version_date = "DATE:2025/04/23"
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
@@ -70,7 +69,9 @@ current_version_date = "DATE:2025/03/03"
 #-------------------------------------------------------------------------------
 
 def parse_attributes(attr_str):
-    """Parse the attributes field from a GTF entry into a dictionary."""
+    """
+    Parse the attributes field from a GTF entry into a dictionary.
+    """
     attrs = {}
     for attr in attr_str.strip().split(";"):
         if attr.strip():
@@ -139,7 +140,9 @@ def process_features(entries):
     return exons, cds
 
 def compute_lengths(features):
-    """Compute the length of each feature and attach it."""
+    """
+    Compute the length of each feature and attach it.
+    """
     for f in features:
         f['length'] = f['end'] - f['start']
     return features
@@ -294,6 +297,7 @@ def plot_transcript(features, args, transcript_id, gene_name, plot_feature="exon
             #### ax.text(x + width/2, rect_y + rect_height + 0.05, label, ha='center', va='bottom', fontsize=8, color="black")
             ax.text(x + width/2, rect_y + rect_height + 0.05, label, ha='center', va='bottom', fontsize=10, color="black")
 
+
     # 8) Draw dashed lines (intron lines) between consecutive features.
     for i in range(1, len(scaled_features)):
         x0 = scaled_features[i-1]['scaled_end']
@@ -339,25 +343,21 @@ def main():
     )
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument(
-      "-t",
       "--transcript",
       type=str,
       help="Transcript ID"
     )
     parser.add_argument(
-      "-g",
       "--gtf",
       type=str,
       help="GTF file (required with -t)"
     )
     group.add_argument(
-      "-f",
       "--file",
       type=str,
       help="File with multiple transcripts and GTF paths (2 tab-delimited columns)"
     )
     parser.add_argument(
-      "-s",
       "--select",
       type=str,
       choices=["exons", "CDS", "both"],
@@ -429,7 +429,6 @@ def main():
       help="Font size for the transcript label (default: 18)"
     )
     parser.add_argument(
-      "-o",
       "--output",
       type=str,
       help="Output directory name. If provided and exists, a numeric suffix is added (e.g., Test01)."
