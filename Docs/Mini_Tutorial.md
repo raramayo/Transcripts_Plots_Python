@@ -133,10 +133,7 @@
     The plot produced corresponds to the `BRCA2` transcript `ENST00000380152`.
     This transcript is 82.3 kbp long and is composed of 26-coding-exons, with the following structure:
 
-	<p align="center">
-	<b>BRCA2 (ENST00000380152 [82.3 kbp - 26-CDS])</b>
-	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run02/ENST00000380152_CDS_Full_Introns.png" width="2000" height="500" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run02/ENST00000380152_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
 
 + To generate a `CDS` plot at full scale with a larger transcript font size:
 
@@ -165,10 +162,7 @@
 
     The plot produced is identical to the one generated before, except for the font size of the transcript label.
 
-	<p align="center">
-	<b>BRCA2 (ENST00000380152 [82.3 kbp - 26-CDS])</b>
-	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run03/ENST00000380152_CDS_Full_Introns.png" width="2000" height="500" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run03/ENST00000380152_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
 
 ### Multiple Transcripts Mode:
 
@@ -249,15 +243,8 @@
 	ENST00000380152	==> Protein coding
 	```
 
-	<p align="center">
-	<b>BRCA2 (ENST00000380152 [82.3 kbp - 26-CDS])</b>
-	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380152_CDS_Full_Introns.png" width="2000" height="500" style="display: block; margin: 0 auto">
-
-	<p align="center">
-	<b>BRCA2 (ENST00000470094 [79.6 kbp - 25-CDS])</b>
-	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000470094_CDS_Full_Introns.png" width="2000" height="500" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380152_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000470094_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
 
 	For `CARS1`
 
@@ -266,15 +253,8 @@
 	ENST00000380525	==> Protein coding
 	```
 
-	<p align="center">
-	<b>CARS1 (ENST00000380525 [56.2 kbp - 23-CDS])</b>
-	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380525_CDS_Full_Introns.png" width="2000" height="500" style="display: block; margin: 0 auto">
-
-	<p align="center">
-	<b>CARS1 (ENST00000531387 [16.4 kbp - 4-CDS])</b>
-	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000531387_CDS_Full_Introns.png" width="2000" height="500" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380525_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000531387_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
 
 ### Additional Examples:
 
@@ -300,10 +280,7 @@
 
     Containing a plot for the `ENST00000380152` transcript.
 
-	<p align="center">
-	<b>BRCA2 (ENST00000380152 [84.8 kbp - 27-exons])</b>
-	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run05/ENST00000380152_exons_Full_Introns.png" width="2000" height="500" style="display: block; margin:0 auto">
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run05/ENST00000380152_exons_Full_Introns.png" style="display: block; margin:0 auto">
 
     The color of the exons displayed is `#305c96`
 
@@ -328,12 +305,8 @@
 
     Containing a plot for the `ENST00000380152` transcript where the exons are depictred using the `#ed0920` color.
 
-    <p align="center">
-	<b>BRCA2 (ENST00000380152 [84.8 kbp - 27-exons])</b>
-    <p align="center">
-    <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run06/ENST00000380152_exons_Full_Introns.png" width="2000" height="500" style="display: block;margin: 0 auto">
-
-    Similar effects can be achieved by using the `--select CDS` flag.
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run06/ENST00000380152_exons_Full_Introns.png" style="display: block;margin: 0 auto">
+	Similar effects can be achieved by using the `--select CDS` flag.
 
 + Adjusting Figure Size:
 
@@ -359,11 +332,7 @@
 
     Containing a plot for the `ENST00000380152` transcript where the `transcript_fintsize` and the `figsize` parameners have been modified.
 
-    <p align="center">
-	<b>BRCA2 (ENST00000380152 [84.8 kbp - 27-exons])</b>
-    <p align="center">
-    <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run07/ENST00000380152_exons_Full_Introns.png" width="2000" height="500" style="display: block;margin: 0 auto">
-
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run07/ENST00000380152_exons_Full_Introns.png" style="display: block;margin: 0 auto">
 
 ### Version:
 
