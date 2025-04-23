@@ -277,8 +277,8 @@
 	Transcripts_Plots_dir_Run05
 	```
 
-    Containing a plot for the `ENST00000380152` transcript.
-	
+    Containing a plot for the ENST00000380152 transcript.
+
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run05/ENST00000380152_exons_Full_Introns.png" style="margin:0 auto">	
 
 	The color of the exons displayed is Blue (#305c96).
