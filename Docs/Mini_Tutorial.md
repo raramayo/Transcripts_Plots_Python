@@ -200,18 +200,18 @@
 	For Gene `ENSG00000110619`, coding for `cysteinyl-tRNA synthetase 1`, the transcripts Biotypes are:
 
 	```
-	ENST00000526890 ==> Retained intron
-	ENST00000531387	==> Nonsense mediated decay
-	ENST00000380525	==> Protein coding
-	ENST00000524825	==> Protein coding CDS not defined
+	ENST00000526890    ==> Retained intron
+	ENST00000531387    ==> Nonsense mediated decay
+	ENST00000380525    ==> Protein coding
+	ENST00000524825    ==> Protein coding CDS not defined
 	```
 
 	For Gene `ENSG00000139618`, coding for `BRCA2 DNA repair associated`, the transcripts Biotypes are:
 
 	```
-	ENST00000470094 ==> Nonsense mediated decay
-	ENST00000380152	==> Protein coding
-	ENST00000700203	==> Retained intron
+	ENST00000470094    ==> Nonsense mediated decay
+	ENST00000380152    ==> Protein coding
+	ENST00000700203    ==> Retained intron
 	```
 
     The command:
@@ -239,14 +239,13 @@
 	For `BRAC2`
 
 	```
-	ENST00000470094 ==> Nonsense mediated decay
-	ENST00000380152	==> Protein coding
+	ENST00000470094    ==> Nonsense mediated decay
+	ENST00000380152    ==> Protein coding
 	```
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380152_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000470094_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
-
-	For `CARS1`
+    For `CARS1`
 
 	```
 	ENST00000531387	==> Nonsense mediated decay
@@ -281,7 +280,6 @@
     Containing a plot for the `ENST00000380152` transcript.
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run05/ENST00000380152_exons_Full_Introns.png" style="display: block; margin:0 auto">
-
     The color of the exons displayed is `#305c96`
 
     We can modify this behavior by issuing the following command:
@@ -357,15 +355,11 @@
 ## Repository:
 
 <pre>
---------------------------------------------------------------------------------
 <a href="https://github.com/raramayo/Transcripts_Plots_Python" target="_blank">Transcripts_Plots_Python</a>
---------------------------------------------------------------------------------
 </pre>
 
 ## Issues:
 
 <pre>
---------------------------------------------------------------------------------
 <a href="https://github.com/raramayo/Transcripts_Plots_Python/issues" target="_blank">Transcripts_Plots_Python_Issues</a>
---------------------------------------------------------------------------------
 </pre>
