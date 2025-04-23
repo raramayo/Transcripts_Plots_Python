@@ -330,7 +330,7 @@
 	Transcripts_Plots_dir_Run07
     ```
 
-    Containing a plot for the `ENST00000380152` transcript where the `transcript_fintsize` and the `figsize` parameners have been modified.
+    Containing a plot for the `ENST00000380152` transcript where the `transcript_fintsize` and the `figsize` parameters have been modified.
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run07/ENST00000380152_exons_Full_Introns.png" style="display: block;margin: 0 auto">
 
