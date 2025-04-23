@@ -83,6 +83,7 @@
 	```
 	python3 Transcripts_Plots.py \
 	--format png \
+	--no_transcript_label \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select exons
@@ -104,7 +105,7 @@
 	This transcript is 84.8 kbp long and is composed of 27-exons, with the following structure:
 
 	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run01/ENST00000380152_exons_Short_Introns.png" width="800" height="800" style="display: block; margin: 0 auto">
+	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run01/ENST00000380152_exons_Short_Introns.png" width="1000" height="400" style="display: block; margin: 0 auto">
 	<p align="center">
 	BRCA2 (ENST00000380152 [84.8 kbp - 27-exons])
 
@@ -113,6 +114,7 @@
 	```
 	python3 Transcripts_Plots.py \
 	--format png \
+	--no_transcript_label \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select CDS \
@@ -144,6 +146,7 @@
 	```
 	python3 Transcripts_Plots.py \
 	--format png \
+	--no_transcript_label \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select CDS \
@@ -225,6 +228,7 @@
 	```
 	python3 Transcripts_Plots.py \
 	--format png \
+	--no_transcript_label \
 	--file Ensembl_multiple_genes_transcripts_list.txt \
 	--select CDS \
 	--full_scale
@@ -284,6 +288,7 @@
     ```
 	python3 Transcripts_Plots.py \
 	--format png \
+	--no_transcript_label \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select exons \
@@ -310,6 +315,7 @@
     ```
 	python3 Transcripts_Plots.py \
 	--format png \
+	--no_transcript_label \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select exons \
@@ -339,6 +345,7 @@
 	```
 	python3 Transcripts_Plots.py \
 	--format png \
+	--no_transcript_label \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
     --select exons \
