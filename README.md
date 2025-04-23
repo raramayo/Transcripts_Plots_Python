@@ -63,18 +63,14 @@
 ## Code_Overview:
 
 <pre>
---------------------------------------------------------------------------------
 <a href="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Docs/Code_Overview.md" target="_blank">Code_Overview.md</a>
---------------------------------------------------------------------------------
 </pre>
 
 
 ## Usage:
 
 <pre>
---------------------------------------------------------------------------------
 <a href="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Docs/Mini_Tutorial.md" target="_blank">Mini_Tutorial.md</a>
---------------------------------------------------------------------------------
 </pre>
 
 
