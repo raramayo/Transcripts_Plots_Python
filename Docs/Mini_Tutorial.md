@@ -82,6 +82,7 @@
 
 	```
 	python3 Transcripts_Plots.py \
+	--format png \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select exons
@@ -103,7 +104,7 @@
 	This transcript is 84.8 kbp long and is composed of 27-exons, with the following structure:
 
 	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run01/ENST00000380152_exons_Short_Introns.pdf" width="800" height="800" style="display: block; margin: 0 auto">
+	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run01/ENST00000380152_exons_Short_Introns.png" width="800" height="800" style="display: block; margin: 0 auto">
 	<p align="center">
 	BRCA2 (ENST00000380152 [84.8 kbp - 27-exons])
 
@@ -111,6 +112,7 @@
 
 	```
 	python3 Transcripts_Plots.py \
+	--format png \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select CDS \
@@ -133,7 +135,7 @@
     This transcript is 82.3 kbp long and is composed of 26-coding-exons, with the following structure:
 
 	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run02/ENST00000380152_CDS_Full_Introns.pdf" width="800" height="800" style="display: block; margin: 0 auto">
+	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run02/ENST00000380152_CDS_Full_Introns.png" width="800" height="800" style="display: block; margin: 0 auto">
 	<p align="center">
 	BRCA2 (ENST00000380152 [82.3 kbp - 26-CDS])
 
@@ -141,6 +143,7 @@
 
 	```
 	python3 Transcripts_Plots.py \
+	--format png \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select CDS \
@@ -163,7 +166,7 @@
     The plot produced is identical to the one generated before, except for the font size of the transcript label.
 
 	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run03/ENST00000380152_CDS_Full_Introns.pdf" width="800" height="800" style="display: block; margin: 0 auto">
+	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run03/ENST00000380152_CDS_Full_Introns.png" width="800" height="800" style="display: block; margin: 0 auto">
 	<p align="center">
 	BRCA2 (ENST00000380152 [82.3 kbp - 26-CDS])
 
@@ -221,6 +224,7 @@
 
 	```
 	python3 Transcripts_Plots.py \
+	--format png \
 	--file Ensembl_multiple_genes_transcripts_list.txt \
 	--select CDS \
 	--full_scale
@@ -245,12 +249,12 @@
 	```
 
 	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380152_CDS_Full_Introns.pdf" width="800" height="800" style="display: block; margin: 0 auto">
+	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380152_CDS_Full_Introns.png" width="800" height="800" style="display: block; margin: 0 auto">
 	<p align="center">
 	BRCA2 (ENST00000380152 [82.3 kbp - 26-CDS])
 
 	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000470094_CDS_Full_Introns.pdf" width="800" height="800" style="display: block; margin: 0 auto">
+	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000470094_CDS_Full_Introns.png" width="800" height="800" style="display: block; margin: 0 auto">
 	<p align="center">
 	BRCA2 (ENST00000470094 [79.6 kbp - 25-CDS])
 
@@ -262,12 +266,12 @@
 	```
 
 	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380525_CDS_Full_Introns.pdf" width="800" height="800" style="display: block; margin: 0 auto">
+	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380525_CDS_Full_Introns.png" width="800" height="800" style="display: block; margin: 0 auto">
 	<p align="center">
 	CARS1 (ENST00000380525 [56.2 kbp - 23-CDS])
 
 	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000531387_CDS_Full_Introns.pdf" width="800" height="800" style="display: block; margin: 0 auto">
+	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000531387_CDS_Full_Introns.png" width="800" height="800" style="display: block; margin: 0 auto">
 	<p align="center">
 	CARS1 (ENST00000531387 [16.4 kbp - 4-CDS])
 
@@ -279,6 +283,7 @@
 
     ```
 	python3 Transcripts_Plots.py \
+	--format png \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select exons \
@@ -294,7 +299,7 @@
     Containing a plot for the `ENST00000380152` transcript.
 
 	<p align="center">
-	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run05/ENST00000380152_exons_Full_Introns.pdf" width="800" height="800" style="display: block; margin:0 auto">
+	<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run05/ENST00000380152_exons_Full_Introns.png" width="800" height="800" style="display: block; margin:0 auto">
 	<p align="center">
 	BRCA2 (ENST00000380152 [84.8 kbp - 27-exons])
 
@@ -304,6 +309,7 @@
 
     ```
 	python3 Transcripts_Plots.py \
+	--format png \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
 	--select exons \
@@ -320,7 +326,7 @@
     Containing a plot for the `ENST00000380152` transcript where the exons are depictred using the `#ed0920` color.
 
     <p align="center">
-    <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run06/ENST00000380152_exons_Full_Introns.pdf" width="800" height="800" style="display: block;margin: 0 auto">
+    <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run06/ENST00000380152_exons_Full_Introns.png" width="800" height="800" style="display: block;margin: 0 auto">
     <p align="center">
 	BRCA2 (ENST00000380152 [84.8 kbp - 27-exons])
 
@@ -332,6 +338,7 @@
 
 	```
 	python3 Transcripts_Plots.py \
+	--format png \
 	--transcript ENST00000380152 \
 	--gtf Ensembl_Gene_ENSG00000139618.gtf \
     --select exons \
@@ -349,7 +356,7 @@
     Containing a plot for the `ENST00000380152` transcript where the `transcript_fintsize` and the `figsize` parameners have been modified.
 
     <p align="center">
-    <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run07/ENST00000380152_exons_Full_Introns.pdf" width="800" height="800" style="display: block;margin: 0 auto">
+    <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run07/ENST00000380152_exons_Full_Introns.png" width="800" height="800" style="display: block;margin: 0 auto">
     <p align="center">
 BRCA2 (ENST00000380152 [84.8 kbp - 27-exons])
 
