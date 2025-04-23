@@ -61,10 +61,10 @@
 
   + The produced file names incorporate whether introns are displayed in full scale or compressed, for example:
 
-	```
-	ENST00000380152_exons_Short_Introns.pdf
-	ENST00000380152_CDS_Full_Introns.pdf
-	```
+```
+ENST00000380152_exons_Short_Introns.pdf
+ENST00000380152_CDS_Full_Introns.pdf
+```
 
 + ### Version Information:
 
@@ -80,87 +80,88 @@
 
 + Run the script by providing a transcript ID and a GTF file:
 
-	```
-	python3 Transcripts_Plots.py \
-	--format png \
-	--dynamic_resize  \
-	--transcript ENST00000380152 \
-	--gtf Ensembl_Gene_ENSG00000139618.gtf \
-	--select exons
-	```
+```
+python3 Transcripts_Plots.py \
+--format png \
+--dynamic_resize  \
+--transcript ENST00000380152 \
+--gtf Ensembl_Gene_ENSG00000139618.gtf \
+--select exons
+```
 
-	This command will produce s directory called:
+This command will produce s directory called:
 
-	```
-	Transcripts_Plots_dir_Run01
-	```
+```
+Transcripts_Plots_dir_Run01
+```
 
-	containing an `exons` plot (with compressed introns by default) in a file called:
+containing an `exons` plot (with compressed introns by default) in a file called:
 
-	```
-	ENST00000380152_exons_Short_Introns.pdf
-	```
+```
+ENST00000380152_exons_Short_Introns.pdf
+```
 
-	The plot produced corresponds to the `BRCA2` transcript `ENST00000380152`.
-	This transcript is 84.8 kbp long and is composed of 27-exons, with the following structure:
+The plot produced corresponds to the `BRCA2` transcript `ENST00000380152`
+
+This transcript is 84.8 kbp long and is composed of 27-exons, with the following structure:
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run01/ENST00000380152_exons_Short_Introns.png" style="display: block; margin: 0 auto">
 
 + To generate a `CDS` plot at full scale:
 
-	```
-	python3 Transcripts_Plots.py \
-	--format png \
-	--dynamic_resize  \
-	--transcript ENST00000380152 \
-	--gtf Ensembl_Gene_ENSG00000139618.gtf \
-	--select CDS \
-	--full_scale
-	```
+```
+python3 Transcripts_Plots.py \
+--format png \
+--dynamic_resize  \
+--transcript ENST00000380152 \
+--gtf Ensembl_Gene_ENSG00000139618.gtf \
+--select CDS \
+--full_scale
+```
 
-    This command will produce s directory called:
+This command will produce s directory called:
 
-	```
-	Transcripts_Plots_dir_Run02
-	```
+```
+Transcripts_Plots_dir_Run02
+```
 
-	containing a `CDS` plot, with `full_scale` introns, in a file called:
+containing a `CDS` plot, with `full_scale` introns, in a file called:
 
-	```
-	ENST00000380152_CDS_Full_Introns.pdf
-	```
+```
+ENST00000380152_CDS_Full_Introns.pdf
+```
 
-    The plot produced corresponds to the `BRCA2` transcript `ENST00000380152`.
-    This transcript is 82.3 kbp long and is composed of 26-coding-exons, with the following structure:
+The plot produced corresponds to the `BRCA2` transcript `ENST00000380152`.
+This transcript is 82.3 kbp long and is composed of 26-coding-exons, with the following structure:
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run02/ENST00000380152_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
 
 + To generate a `CDS` plot at full scale with a larger transcript font size:
 
-	```
-	python3 Transcripts_Plots.py \
-	--format png \
-	--dynamic_resize  \
-	--transcript ENST00000380152 \
-	--gtf Ensembl_Gene_ENSG00000139618.gtf \
-	--select CDS \
-	--full_scale \
-	--transcript_fontsize 24
-	```
+```
+python3 Transcripts_Plots.py \
+--format png \
+--dynamic_resize  \
+--transcript ENST00000380152 \
+--gtf Ensembl_Gene_ENSG00000139618.gtf \
+--select CDS \
+--full_scale \
+--transcript_fontsize 24
+```
 
-    This command will produce s directory called:
+This command will produce s directory called:
 
-	```
-	Transcripts_Plots_dir_Run03
-	```
+```
+Transcripts_Plots_dir_Run03
+```
 
-	containing a `CDS` plot, with `full_scale` introns, in a file called:
+containing a `CDS` plot, with `full_scale` introns, in a file called:
 
-	```
-	ENST00000380152_CDS_Full_Introns.pdf
-	```
+```
+ENST00000380152_CDS_Full_Introns.pdf
+```
 
-    The plot produced is identical to the one generated before, except for the font size of the transcript label.
+The plot produced is identical to the one generated before, except for the font size of the transcript label.
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run03/ENST00000380152_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
 
@@ -168,89 +169,92 @@
 
 + A powerful feature of this script is its ability to plot different features from many transcripts, from different `GTF` files and with different colors at once.
 
-    To do this, one needs to generate a tab-delimited file where each line contains a transcript ID, the corresponding GTF file, and other desired optional commands.
+To do this, one needs to generate a tab-delimited file where each line contains a transcript ID, the corresponding GTF file, and other desired optional commands.
 
-	For example, if we were to generate a file entitled:
+For example, if we were to generate a file entitled:
 
-	```
-	Ensembl_multiple_genes_transcripts_list.txt
-	```
+```
+Ensembl_multiple_genes_transcripts_list.txt
+```
 
-	Containing the following list of transcripts:
+Containing the following list of transcripts:
 
-	```
-	ENST00000526890	Ensembl_Gene_ENSG00000110619.gtf
-	ENST00000531387	Ensembl_Gene_ENSG00000110619.gtf
-	ENST00000380525	Ensembl_Gene_ENSG00000110619.gtf
-	ENST00000524825	Ensembl_Gene_ENSG00000110619.gtf
-	ENST00000470094	Ensembl_Gene_ENSG00000139618.gtf
-	ENST00000380152	Ensembl_Gene_ENSG00000139618.gtf
-	ENST00000700203	Ensembl_Gene_ENSG00000139618.gtf
-	```
+```
+ENST00000526890	Ensembl_Gene_ENSG00000110619.gtf
+ENST00000531387	Ensembl_Gene_ENSG00000110619.gtf
+ENST00000380525	Ensembl_Gene_ENSG00000110619.gtf
+ENST00000524825	Ensembl_Gene_ENSG00000110619.gtf
+ENST00000470094	Ensembl_Gene_ENSG00000139618.gtf
+ENST00000380152	Ensembl_Gene_ENSG00000139618.gtf
+ENST00000700203	Ensembl_Gene_ENSG00000139618.gtf
+```
 
-	Note the `tab` separator between the `Transcript ID` and the `GTF` file.
-	This is, for example:
+Note the `tab` separator between the `Transcript ID` and the `GTF` file.
 
-	```
-	ENST00000526890 <tab> Ensembl_Gene_ENSG00000110619.gtf
-	```
+This is, for example:
 
-	Also note the different `Biotypes` associated for each one of the transcripts to be plotted.
+```
+ENST00000526890 <tab> Ensembl_Gene_ENSG00000110619.gtf
+```
 
-	For Gene `ENSG00000110619`, coding for `cysteinyl-tRNA synthetase 1`, the transcripts Biotypes are:
+Also note the different `Biotypes` associated for each one of the transcripts to be plotted.
 
-	```
-	ENST00000526890    ==> Retained intron
-	ENST00000531387    ==> Nonsense mediated decay
-	ENST00000380525    ==> Protein coding
-	ENST00000524825    ==> Protein coding CDS not defined
-	```
+For Gene `ENSG00000110619`, coding for `cysteinyl-tRNA synthetase 1`, the transcripts Biotypes are:
 
-	For Gene `ENSG00000139618`, coding for `BRCA2 DNA repair associated`, the transcripts Biotypes are:
+```
+ENST00000526890    ==> Retained intron
+ENST00000531387    ==> Nonsense mediated decay
+ENST00000380525    ==> Protein coding
+ENST00000524825    ==> Protein coding CDS not defined
+```
 
-	```
-	ENST00000470094    ==> Nonsense mediated decay
-	ENST00000380152    ==> Protein coding
-	ENST00000700203    ==> Retained intron
-	```
+For Gene `ENSG00000139618`, coding for `BRCA2 DNA repair associated`, the transcripts Biotypes are:
 
-    The command:
+```
+ENST00000470094    ==> Nonsense mediated decay
+ENST00000380152    ==> Protein coding
+ENST00000700203    ==> Retained intron
+```
 
-	```
-	python3 Transcripts_Plots.py \
-	--format png \
-	--dynamic_resize  \
-	--file Ensembl_multiple_genes_transcripts_list.txt \
-	--select CDS \
-	--full_scale
-	```
+The command:
 
-	Will generate a directory entitled:
+```
+python3 Transcripts_Plots.py \
+--format png \
+--dynamic_resize  \
+--file Ensembl_multiple_genes_transcripts_list.txt \
+--select CDS \
+--full_scale
+```
 
-	```
-	Transcripts_Plots_dir_Run04
-	```
+Will generate a directory entitled:
 
-	Containing four plots total, two for Gene `BRCA2` and two for Gene `CARS1`.
+```
+Transcripts_Plots_dir_Run04
+```
 
-	Because we are requesting to plot `CDS`, of the four transcript IDs present in our command list,
-    the only transcripts plotted are:
+Containing four plots total, two for Gene `BRCA2` and two for Gene `CARS1`.
 
-	For `BRAC2`
+Because we are requesting to plot `CDS`, of the four transcript IDs present in our command list,
 
-	```
-	ENST00000470094    ==> Nonsense mediated decay
-	ENST00000380152    ==> Protein coding
-	```
+the only transcripts plotted are:
+
+For `BRAC2`
+
+```
+ENST00000470094    ==> Nonsense mediated decay
+ENST00000380152    ==> Protein coding
+```
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380152_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000470094_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
-    For `CARS1`
 
-	```
-	ENST00000531387	==> Nonsense mediated decay
-	ENST00000380525	==> Protein coding
-	```
+For `CARS1`
+
+```
+ENST00000531387	==> Nonsense mediated decay
+ENST00000380525	==> Protein coding
+```
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000380525_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run04/ENST00000531387_CDS_Full_Introns.png" style="display: block; margin: 0 auto">
@@ -259,31 +263,31 @@
 
 + Adjusting the `exons` and `CDS` colors:
 
-    The command:
+The command:
 
-    ```
-	python3 Transcripts_Plots.py \
-	--format png \
-	--dynamic_resize  \
-	--transcript ENST00000380152 \
-	--gtf Ensembl_Gene_ENSG00000139618.gtf \
-	--select exons \
-	--full_scale
-	```
+```
+python3 Transcripts_Plots.py \
+--format png \
+--dynamic_resize  \
+--transcript ENST00000380152 \
+--gtf Ensembl_Gene_ENSG00000139618.gtf \
+--select exons \
+--full_scale
+```
 
-	Will generate a directory entitled:
+Will generate a directory entitled:
 
-	```
-	Transcripts_Plots_dir_Run05
-	```
+```
+Transcripts_Plots_dir_Run05
+```
 
-    Containing a plot for the `ENST00000380152` transcript.
+Containing a plot for the `ENST00000380152` transcript.
 
-<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run05/ENST00000380152_exons_Full_Introns.png" style="margin:0 auto">  
+<img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run05/ENST00000380152_exons_Full_Introns.png" style="display: block; margin: 0 auto">
 
 
 The color of the exons displayed is Blue (`#305c96`)
-		
+
 We can modify this behavior by issuing the following command:
 
 ```
@@ -307,53 +311,57 @@ Containing a plot for the `ENST00000380152` transcript where the exons are depic
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run06/ENST00000380152_exons_Full_Introns.png" style="display: block; margin:0 auto">
 
-	Similar effects can be achieved by using the `--select CDS` flag.
+Similar effects can be achieved by using the `--select CDS` flag.
 
 + Adjusting Figure Size:
 
-	The command:
+The command:
 
-	```
-	python3 Transcripts_Plots.py \
-	--format png \
-	--dynamic_resize  \
-	--transcript ENST00000380152 \
-	--gtf Ensembl_Gene_ENSG00000139618.gtf \
-    --select exons \
-	--full_scale \
-	--transcript_fontsize 12 \
-	--figsize 10 6
-	```
+```
+python3 Transcripts_Plots.py \
+--format png \
+--dynamic_resize  \
+--transcript ENST00000380152 \
+--gtf Ensembl_Gene_ENSG00000139618.gtf \
+--select exons \
+--full_scale \
+--transcript_fontsize 12 \
+--figsize 10 6
+```
 
-	Will generate a directory entitled:
+Will generate a directory entitled:
 
-    ```
-	Transcripts_Plots_dir_Run07
-    ```
+```
+Transcripts_Plots_dir_Run07
+```
 
-    Containing a plot for the `ENST00000380152` transcript where the `transcript_fintsize` and the `figsize` parameters have been modified.
+Containing a plot for the `ENST00000380152` transcript where the `transcript_fintsize` and the `figsize` parameters have been modified.
 
 <img src="https://github.com/raramayo/Transcripts_Plots_Python/blob/main/Images/Transcripts_Plots_dir_Run07/ENST00000380152_exons_Full_Introns.png" style="display: block;margin: 0 auto">
 
 ### Version:
 
-  ```
-  python3 Transcripts_Plots.py -v
+```
+python3 Transcripts_Plots.py -v
+```
 
-  or
+or
 
-  python3 Transcripts_Plots.py --version
-  ```
+```
+python3 Transcripts_Plots.py --version
+```
 
 ### Help:
 
-  ```
-  python3 Transcripts_Plots.py -h
+```
+python3 Transcripts_Plots.py -h
+```
 
-  or
+or
 
-  python3 Transcripts_Plots.py --help
-  ```
+```
+python3 Transcripts_Plots.py --help
+```
 
 ## Repository:
 

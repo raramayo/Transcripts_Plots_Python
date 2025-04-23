@@ -242,15 +242,11 @@
 ## Repository:
 
 <pre>
---------------------------------------------------------------------------------
 <a href="https://github.com/raramayo/Transcripts_Plots_Python" target="_blank">Transcripts_Plots_Python</a>
---------------------------------------------------------------------------------
 </pre>
 
 ## Issues:
 
 <pre>
---------------------------------------------------------------------------------
 <a href="https://github.com/raramayo/Transcripts_Plots_Python/issues" target="_blank">Transcripts_Plots_Python_Issues</a>
---------------------------------------------------------------------------------
 </pre>
