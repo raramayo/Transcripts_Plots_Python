@@ -61,7 +61,7 @@ script_name = os.path.basename(sys.argv[0])
 script_version = "1.0.3"
 
 # Defining_Script_Current_Version (date '+DATE:%Y/%m/%d%tTIME:%R')
-current_version_date = "DATE:2025/04/23"
+current_version_date = "DATE:2025/04/24"
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------

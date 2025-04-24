@@ -6,21 +6,21 @@
 
 + ### Input Flexibility:
 
-  + Single Transcript:
++ Single Transcript:
 
 	+ Use the `--transcript` flag together with a GTF file (`--gtf`) to plot one transcript.
 
-   + Multiple Transcripts:
++ Multiple Transcripts:
 
-	 + Use the `--file` flag to supply a tab-delimited file where each line lists a transcript ID and its corresponding GTF file path.
+	+ Use the `--file` flag to supply a tab-delimited file where each line lists a transcript ID and its corresponding GTF file path.
 
 + ### Feature Selection:
 
-  + `Exons` Only: Plot the exon structures.
++ `Exons` Only: Plot the exon structures.
 
-  + `CDS` Only: Plot only the coding sequences.
++ `CDS` Only: Plot only the coding sequences.
 
-  + `Both`: Generate separate output files for exons and CDS.
++ `Both`: Generate separate output files for exons and CDS.
 
 + ### Strand-Specific Plotting:
 
