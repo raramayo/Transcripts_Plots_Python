@@ -234,3 +234,25 @@ HELP:           show this help message and exit
 <pre>
 <a href="https://github.com/raramayo/Transcripts_Plots_Python/issues" target="_blank">Transcripts_Plots_Python_Issues</a>
 </pre>
+
+## Citation:
+
+```
+@misc{RN161,
+   author = {Aramayo, Rodolfo},
+   title = {Transcripts_Plots_Python},
+   publisher = {CERN Data Centre & InvenioRDM},
+   month = {2025-03-03},
+   keywords = {Bioinformatics
+comparative genomics
+ensembl
+gene annotation
+genome annotation
+genome browsers},
+   DOI = {10.5281/zenodo.14962604},
+   url = {https://doi.org/10.5281/zenodo.14962604},
+   year = {2025},
+   type = {Dataset}
+}
+```
+
